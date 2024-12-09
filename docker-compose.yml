@@ -1,0 +1,34 @@
+version: "3.8"
+
+services:
+  html2pdf:
+    build: .
+    container_name: html2pdf
+    ports:
+      - "${PORT}:${PORT}"
+    environment:
+      - PORT
+    networks:
+      - mynetwork_nest
+
+  minio:
+    image: minio/minio
+    container_name: minio
+    ports:
+      - "${MINIO_PORT}:${MINIO_PORT}"
+      - "${MINIO_CONSOLE_PORT}:${MINIO_CONSOLE_PORT}"
+    volumes:
+      - minio_data:/data
+    environment:
+      MINIO_ROOT_USER: ${MINIO_ROOT_USER}
+      MINIO_ROOT_PASSWORD: ${MINIO_ROOT_PASSWORD}
+    command: server --console-address ":${MINIO_CONSOLE_PORT}" /data
+    networks:
+      - mynetwork_nest
+
+volumes:
+  minio_data:
+
+networks:
+  mynetwork_nest:
+    driver: bridge

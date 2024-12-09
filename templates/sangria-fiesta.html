@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fiesta de la Sangría - Invitación</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-image: url("https://static.wixstatic.com/media/b16c2f_df6b114c5ab74a8c9e7beaef9a8ccad3~mv2.jpg/v1/fill/w_3111,h_1488,al_c,q_90,enc_auto/b16c2f_df6b114c5ab74a8c9e7beaef9a8ccad3~mv2.jpg");
+        background-size: cover;
+        background-position: center;
+        margin: 0;
+        padding: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+      }
+      .invitation {
+        background-color: rgba(240, 118, 60, 0.7);
+        color: #ffffff;
+        font-family: montserrat, sans-serif;
+        border-radius: 20px;
+        padding: 20px;
+        max-width: 400px;
+        text-align: center;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+      .title {
+        font-family: "Trirong", serif;
+        font-size: 30px;
+        margin-bottom: 10px;
+      }
+      .sangria-icon {
+        height: 150px;
+        margin: 0 auto 20px;
+        background-image: url("https://static.wixstatic.com/media/b16c2f_167441f12aff48c795d606bf300381d3~mv2.png/v1/crop/x_0,y_227,w_3000,h_1668/fill/w_608,h_338,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/Real%20Sangria%20Logo-01_edited_edited_edite.png");
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        border-radius: 0;
+      }
+      .restaurant-name {
+        font-size: 20px;
+        margin-bottom: 15px;
+      }
+      .schedule {
+        margin-bottom: 20px;
+      }
+      .schedule p {
+        margin: 5px 0;
+      }
+      .official-invitation {
+        font-size: 18px;
+        font-weight: bold;
+        margin-bottom: 10px;
+      }
+      .date-location {
+        margin-bottom: 15px;
+      }
+      .reservations {
+        color: #7d3e69;
+        font-style: italic;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="invitation">
+      <h1 class="title">FIESTA DE LA SANGRÍA</h1>
+      <div class="sangria-icon"></div>
+      <h2 class="restaurant-name">{{restaurant_name}}</h2>
+      <div class="schedule">
+        <p><strong>At:</strong>{{time}}</p>
+      </div>
+      <!--       <p class="official-invitation">INVITACIÓN OFICIAL</p> -->
+      <br />
+      <div class="date-location">
+        <p>{{date}}</p>
+        <p>{{address}}</p>
+      </div>
+      <p class="reservations">
+        Reservations at:<br />
+        <a href="mailto:{{email}}">{{email}}</a>
+      </p>
+    </div>
+  </body>
+</html>
